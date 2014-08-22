@@ -1,0 +1,65 @@
+<!DOCTYPE html="zh-cmn-Hans">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>h5游戏</title>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no">
+    <style>
+        #gameView{
+            width: 100%;
+            height: 100%;
+        }
+        .game_wrapper{
+            margin: auto;
+            width: 100%;
+            text-align: center;
+        }
+        .title{
+            text-align: center;
+        }
+        .copy{
+            text-align: center;
+        }
+    </style>
+    <meta >
+</head>
+<body>
+    <header>
+        <h1 class="title">寻找donkey</h1>
+    </header>
+    <div class="game_wrapper">
+        <div id="gameView">
+            <p class="copy">
+                <h2 class="copy">There so many donkeys ,all round the world !</h2>
+            </p>
+        </div>
+        <div class="description">
+            <input type="button" value="here we go" id="fire">
+        </div>
+    </div>
+    <script src="Rect.js"></script>
+    <script src="App.js"></script>
+    <script type="text/javascript">
+    var $ = function (selectors) {
+        return window.document.querySelector(selectors);
+    }
+    var removeHtml = function(){
+      return this.each(function(){
+        if (this.parentNode != null)
+          this.parentNode.removeChild(this)
+      });
+    }
+    var isFired = false;
+    $('#fire').addEventListener('click', function () {
+        var app = new App();
+        if (isFired) {
+            app.reload();
+            return false;
+        }
+        this.value = 'reload';
+        isFired = true;
+        app.fireGame();
+    });
+    </script>
+</body>
+</html>
