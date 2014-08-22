@@ -14,7 +14,7 @@ function addRect() {
     var y = parseInt(Math.random() * n);
     for (var indexX = 0; indexX < n; indexX++) {
         for (var indexY = 0; indexY < n; indexY++) {
-            var r = new Rect(n, color,diffColor);
+            var r = new Rect(n, color, diffColor);
             gameView.addChild(r);
             r.x = indexX;
             r.y = indexY;
